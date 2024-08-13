@@ -1,0 +1,301 @@
+
+.layer1 {
+    background-image: url('../assets/langit.png');
+    z-index: 1;
+    position: absolute; 
+    width: 1450px; 
+    height: 650px; 
+}
+
+.layer2 {
+    background-image: url('../assets/pohon.webp');
+    position: absolute;
+    z-index: 2;
+    width: 1450px; 
+    height: 650px;
+}
+
+.layer3 {
+    background-image: url('../assets/rumah.png');
+    z-index: 3;
+    width: 1450px; 
+    height: 650px;
+}
+
+.layer4 {
+    background-image: url('../assets/rocketburger.webp');
+    position: absolute;
+    z-index: 4;
+    top: 140px;
+    left: 170px;
+    width: 330px;
+    height: 300px;
+    transform: translate(0%, 0%);
+}
+
+.backhitam {
+    background-image: url('../assets/pintu.png');
+    position: absolute;
+    animation: pintuTerbukaGeser 6s;
+    top: 280px;
+    left: 640px;
+    width: 110px;
+    height: 172px;
+    z-index: 5;
+}
+
+@keyframes pintuTerbukaGeser {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    50% {
+        transform: translate(-80%, 0%);
+    }
+    70% {
+        transform: translate(-80%, 0%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+
+.black {
+    background-color: rgb(22, 22, 22);
+    position: absolute;
+    top: 280px;
+    left: 640px;
+    width: 110px;
+    height: 172px;
+    z-index: 4;
+}
+
+
+
+.restoran {
+    position: absolute; /* Ubah menjadi absolute untuk memungkinkan pergerakan */
+    z-index: 5;
+    top: -65px;
+    bottom:0px;
+    left: 0px;
+    right: 0px;
+    right: 0px;
+    width: 1390px;/* Menggunakan ukuran tetap */
+}
+.bendera {
+    background-image: url('../assets/benderakaca.webp');
+    position: absolute;
+    top: 300px;
+    left: 770px;
+    right: 356px;
+    width: 248px;
+    height: 41px;
+    z-index: 6;
+}
+
+.kucing, .alien, .koran, .table1, .table2, .table3, .waiter, .pepefinker, .bola {
+    position: absolute;
+    z-index: 6;
+}
+
+.kucing {
+    top: 460px;
+    left: 620px;
+    width: 140px;
+    height: 70px;
+    background-image: url('../assets/kucing.webp');
+}
+
+.alien {
+    top: 310px;
+    left: 890px;
+    width: 80px;
+    height: 150px;
+    background-image: url('../assets/alien.webp');
+}
+
+.koran {
+    top: 330px;
+    left: 390px;
+    width: 50px;
+    height: 150px;
+    background-image: url('../assets/wolfkoran.webp');
+}
+
+.table1 {
+    top: 250px;
+    right: 0px;
+    left: 35px;
+    width: 250px;
+    height: 290px;
+    background-image: url('../assets/table1.webp');
+}
+
+.table2 {
+    top: 350px;
+    left: 385px;
+    width: 230px;
+    height: 160px;
+    background-image: url('../assets/table2.webp');
+}
+
+.table3 {
+    top: 325px;
+    left: 780px;
+    right: 0px;
+    width: 230px;
+    height: 200px;
+    background-image: url('../assets/table3.webp');
+}
+
+.waiter {
+    top: 300px;
+    left: 595px;
+    width: 65px;
+    height: 175px;
+    background-image: url('../assets/waiter.webp');
+}
+
+.pepefinker {
+    top: 166px;
+    bottom: 75px;
+    right: 0px;
+    left: 1080px;
+    width: 310px;
+    height: 390px;
+    position:absolute;
+    background-image: url('../assets/pepefinker.webp');
+}
+
+.bola {
+    top: 179px; 
+    left: 1080px; 
+    width: 120px; 
+    height: 150px;
+    background-image: url('../assets/bola.webp');
+}
+
+.bola:hover {
+    animation: spin 1s linear infinite;
+}
+
+.image1, .asep, .sepeda, .burger {
+    position: absolute;
+    z-index: 6;
+}
+
+.image1 {
+    width: 1400px;
+    height: auto;
+    top: 470px;
+    left: 0;
+}
+
+.asep {
+    left: 184px;
+    bottom: 55px;
+    top: 480px;
+    animation: swing 3s infinite ease-in-out;
+}
+
+.sepeda {
+    width: 250px;
+    bottom: 9px;
+    top: 380px;
+    animation: moveRightToLeft 9s infinite ease-in-out;
+}
+
+@keyframes moveRightToLeft {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-100vw);
+    }
+}
+
+.burger {
+    top: 0;
+    right: 0;
+    left: 1210px;
+    width: 180px;
+    height: auto;
+}
+
+/* Additional CSS for loading and intro screens */
+.intro {
+    background-color: rgba(25, 23, 24, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+}
+
+.loader {
+    background-color: rgba(25, 23, 24, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 102;
+}
+
+.centerClickText {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 17%;
+    height: 8%;
+    align-items: center;
+    transition: color 0.3s ease, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+}
+
+.centerClickText:hover {
+    color: #FFCC00;
+    width: 24%;
+    height: 20%;
+    font-size: 1.9em;
+}
+
+.introAnimation {
+    font-size: 1.85em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loadingimage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24%;
+    height: 64%;
+    background-image: url('../assets/burgerloading.gif');
+}
+
+.loadingtext {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1.85em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Landscape */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
