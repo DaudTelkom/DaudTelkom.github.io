@@ -110,9 +110,10 @@
         });
 
         let runningDoor = false;
+        let clickedDoor = false;
 
         function animateDoor() {
-            if (runningDoor) {
+            if (runningDoor || clickedDoor) {
                 return;
             }
 
@@ -154,10 +155,8 @@
             }
         }
 
-        let clickedDoor = false;
-
         function enterDoor() {
-            if (clickedDoor) {
+            if (clickedDoor || runningDoor) {
                 return;
             }
 
