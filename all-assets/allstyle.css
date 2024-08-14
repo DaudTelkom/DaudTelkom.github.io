@@ -1,5 +1,6 @@
 * {
     cursor: url(CURSORHAMBURG.png) 30 30, crosshair;
+    overflow: hidden;
 }
 
 body {
@@ -8,10 +9,7 @@ body {
 }
 
 .framescreen {
-    overflow: hidden;
     position: fixed;
-    overflow-x: scroll;
-    overflow-y: scroll;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;

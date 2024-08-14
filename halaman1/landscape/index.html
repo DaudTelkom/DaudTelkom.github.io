@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="../../all-assets/allstyle.css" />
 
     <script>
-        window.addEventListener("load", async function() {
-            const loaderPlay = document.getElementById("loaderPlayer");
-            const progress = document.getElementById("progress");
+        // window.addEventListener("load", async function() {
+        //     const loaderPlay = document.getElementById("loaderPlayer");
+        //     const progress = document.getElementById("progress");
 
-            for (let i = 0; i < 100; i++) {
-                const progressContent = i + 1 + "%";
-                progress.textContent = progressContent;
-                console.log("Loading ... " + progressContent);
-                await wait(20);
-            }
+        //     for (let i = 0; i < 100; i++) {
+        //         const progressContent = i + 1 + "%";
+        //         progress.textContent = progressContent;
+        //         console.log("Loading ... " + progressContent);
+        //         await wait(20);
+        //     }
 
-            loaderPlay.remove();
-            playIntro();
-        });
+        //     loaderPlay.remove();
+        //     playIntro();
+        // });
 
         function wait(ms) {
             return new Promise((resolve) => setTimeout(resolve, ms));

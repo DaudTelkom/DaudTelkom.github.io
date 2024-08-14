@@ -28,33 +28,21 @@
             return new Promise((resolve) => setTimeout(resolve, ms));
         }
 
-        // let done = false;
-
         function playIntro() {
-            // if (done) {
-            //     return;
-            // }
-
-            // done = true;
-
             let intro = null;
             let alpha = 1;
             const introPlayer = document.getElementById("introPlayer");
-            // const textIntro = document.getElementById("centerClickText");
 
             clearInterval(intro);
             intro = setInterval(introframe, 20);
 
             function introframe() {
                 if (alpha <= 0) {
-                    done = true;
                     clearInterval(intro);
                     introPlayer.remove();
-                    // textIntro.remove();
                 } else {
                     alpha -= 0.01;
                     introPlayer.style.backgroundColor = `rgba(25, 23, 24, ${alpha})`;
-                    // textIntro.style.color = `rgba(255, 204, 0, ${alpha})`;
                 }
             }
         }
@@ -80,10 +68,10 @@
                     running = false;
                     clearInterval(move);
                 } else {
-                    posX += 0.1;
-                    posY -= 0.5;
-                    elem.style.left = posX + "%";
-                    elem.style.top = posY + "%";
+                    posX += 1; /* Gunakan nilai tetap dalam px */
+                    posY -= 2.5; /* Gunakan nilai tetap dalam px */
+                    elem.style.left = posX + "px";
+                    elem.style.top = posY + "px";
                 }
             }
         }
@@ -169,9 +157,6 @@
             clearInterval(move);
             move = setInterval(openFrame, 20);
 
-            const door = document.getElementById("door");
-            const barangMasuk = document.getElementById("barangMasuk");
-
             function openFrame() {
                 if (posX <= -90) {
                     clearInterval(move);
@@ -180,7 +165,7 @@
                     posX -= 1;
                     elem.style.transform = `translate(${posX}%, 0)`;
                     if (posX <= -45) {
-                        barangMasuk.style.display = "block";
+                        document.getElementById("barangMasuk").style.display = "block";
                     }
                 }
             }
@@ -191,55 +176,40 @@
 <body>
     <div class="container-main" id="container-main">
         <!-- Awan -->
-        <div id="awan" class="layer1" ></div>
+        <div id="awan" class="layer1"></div>
 
         <!-- Pohon -->
-        <div id="pohon" class="layer2" ></div>
+        <div id="pohon" class="layer2"></div>
 
         <!-- Rumah -->
-        <div id="rumah" class="layer3" ></div>
+        <div id="rumah" class="layer3"></div>
 
         <!-- Burger Roket -->
-        <div id="burger" class="layer4" ></div>
+        <div id="burger" class="layer4"></div>
 
         <!-- Pintu -->
         <div id="door-hover" class="doortrigger" style="z-index: 9" onmouseenter="animateDoor()" onclick="enterDoor()"></div>
-        
         <img src="../assets/contents/pintu.png" class="pintu">
         <div id="black" class="black"></div>
 
+        <!-- Asset -->
         <img src="../assets/contents/restoran.png" alt="restoran" class="restoran">
-
         <img src="../assets/contents/object.png" alt="trotoar" class="trotoar">
-
         <img src="../assets/contents/benderakaca.webp" class="bendera">
-
         <img src="../assets/contents/kucing.webp" class="kucing">
-
         <img src="../assets/contents/alien.webp" class="alien">
-
-        <img src="../assets/contents/wolfkoran.webp" class="koran">
-        
-        <img src="../assets/contents/table1.webp" class="table1">
-
-        <img src="../assets/contents/table2.webp" class="table2">
-
-        <img src="../assets/contents/table3.webp" class="table3">
-
         <img src="../assets/contents/waiter.webp" class="waiter">
-        
+        <img src="../assets/contents/wolfkoran.webp" class="koran">
+        <img src="../assets/contents/table1.webp" class="table1">
+        <img src="../assets/contents/table2.webp" class="table2">
+        <img src="../assets/contents/table3.webp" class="table3">
+        <img src="../assets/contents/waiter.webp" class="waiter">
         <img src="../assets/contents/pepefinker.webp" class="pepefinker">
-
         <img src="../assets/contents/bola.webp" class="bola">
-        
         <img src="../assets/contents/asep.gif" class="asep">
-
         <img src="../assets/contents/sepeda.gif" alt="sepeda" class="sepeda" />
-
-        <img src="../assets/contents/burgerloading.gif" class="burgerloading">
-
         <img src="../assets/contents/burgerTerbang.webp" class="flyingburger">
-            
+
 
         <!-- Efek Barang Masuk -->
         <div class="layer7" style="z-index: 8">
@@ -252,10 +222,10 @@
         <!-- Introduction -->
         <div class="intro" id="introPlayer" style="z-index: 101"></div>
         <!-- <div class="intro" id="introPlayer" style="z-index: 101" onclick="playIntro()">
-                <div class="centerClickText" id="centerClickText">
-                    <h1 class="introAnimation">Click to Open</h1>
-                </div>
-            </div> -->
+            <div class="centerClickText" id="centerClickText">
+                <h1 class="introAnimation">Click to Open</h1>
+            </div>
+        </div> -->
         <div class="loader" id="loaderPlayer" style="z-index: 102">
             <div class="loadingimage"></div>
             <div class="loadingtext">
