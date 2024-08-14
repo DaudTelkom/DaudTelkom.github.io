@@ -7,33 +7,63 @@
     <title>HAMBURG</title>
 
     <link rel="stylesheet" href="all-assets/allstyle.css">
+    <script>
+        async function ScrollMobile() {
+            console.log("ScrollMobile");
+        }
+    </script>
 </head>
 
 <body>
-    <iframe class="framescreen" src="halaman1/landscape/index.html" frameborder="0" id="landscape"></iframe>
+    <!-- <iframe class="framescreen" src="halaman1/landscape/index.html" frameborder="0" id="landscape"></iframe> -->
     <iframe class="framescreen" src="halaman1/oriental/index.html" frameborder="0" id="oriental"></iframe>
+    <div class="hoverscroll" onclick="ScrollMobile(event)"></div>
 </body>
 
 <script>
-    const landscape = document.getElementById("landscape");
-    const oriental = document.getElementById("oriental");
+    const orientalElement = document.getElementById("oriental");
 
-    window.addEventListener("resize", function() {
-        setPage();
-    });
+    let translateX = -40;
 
-    window.addEventListener("load", function() {
-        setPage();
-    });
+    function ScrollMobile(e) {
+        const pageWidth = window.innerWidth;
+        
+        const mouseX = e.clientX;
 
-    function setPage() {     
-        if (window.matchMedia("(orientation: landscape)").matches) {
-            landscape.style.display = "block";
-            oriental.style.display = "none";
+        if (mouseX < pageWidth / 2) {
+            console.log("Left side");
+            if (translateX < 0) {
+                translateX += 1;
+            }
         } else {
-            landscape.style.display = "none";
-            oriental.style.display = "block";
+            console.log("Right side");
+            if (translateX > -80) {
+                translateX -= 1;
+            }
         }
+
+        orientalElement.style.transform = `translateX(${translateX}%)`;
     }
+
+    // const landscape = document.getElementById("landscape");
+    // const oriental = document.getElementById("oriental");
+
+    // window.addEventListener("resize", function() {
+    //     setPage();
+    // });
+
+    // window.addEventListener("load", function() {
+    //     setPage();
+    // });
+
+    // function setPage() {     
+    //     if (window.matchMedia("(orientation: landscape)").matches) {
+    //         landscape.style.display = "block";
+    //         oriental.style.display = "none";
+    //     } else {
+    //         landscape.style.display = "none";
+    //         oriental.style.display = "block";
+    //     }
+    // }
 </script>
 </html>
