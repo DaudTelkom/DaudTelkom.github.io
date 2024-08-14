@@ -174,7 +174,7 @@
             function openFrame() {
                 if (posX <= -90) {
                     clearInterval(move);
-                    window.location.href = "../../page2.html";
+                    window.top.open("../../page2.html", "_self");
                 } else {
                     posX -= 1;
                     elem.style.transform = `translate(${posX}%, 0)`;

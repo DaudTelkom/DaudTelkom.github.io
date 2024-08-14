@@ -63,7 +63,6 @@ function stopRingingPhone() {
     staticphonecell.style.display = "block";
     ringingphone.style.display = "none";
     clicked = false;
-    audio.reset();
 }
 
 const animSpeed = 30;

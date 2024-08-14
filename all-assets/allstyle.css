@@ -18,12 +18,23 @@ body {
     z-index: 1;
 }
 
-.hoverscroll {
+.hoverscrollleft {
     position: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-    width: 100%;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+}
+
+.hoverscrollright {
+    position: fixed;
+    left: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 15%;
     height: 100%;
     z-index: 2;
 }
