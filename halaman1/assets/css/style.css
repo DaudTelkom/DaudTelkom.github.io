@@ -17,7 +17,7 @@ div {
     position: absolute;
     left: -5%;
     background-image: url('../contents/langit.png');
-    width: 150%;
+    width: 110%;
 }
 
 .layer2 {
@@ -48,7 +48,7 @@ div {
 .door {
     position: absolute;
     top: 43.7%;
-    left: 45%;
+    left: 42.5%;
     width: 9%;
     height: 24.8%;
     background-image: url('../contents/pintu.png');
@@ -60,6 +60,15 @@ div {
     left: 45%;
     width: 9%;
     height: 24.8%;
+}
+
+.clickanimation {
+    position: absolute;
+    top: 52%;
+    left: 48.5%;
+    width: 3%;
+    height: 5%;
+    background-image: url('../../../all-assets/clickanimation.webp');
 }
 
 .black {
@@ -125,19 +134,19 @@ div {
 
 .table2 {
     position: absolute;
-    top: 53%;
+    top: 54%;
     left: 29%;
     width: 16%;
-    height: 24%;
+    height: 23%;
     background-image: url('../contents/table2.webp');
 }
 
 .table3 {
     position: absolute;
-    top: 48%;
+    top: 52%;
     left: 57%;
     width: 15%;
-    height: 30%;
+    height: 26%;
     background-image: url('../contents/table3.webp');
 }
 
@@ -160,12 +169,32 @@ div {
 }
 
 .bola {
+    z-index: 50;
     position: absolute;
     top: 31.3%;
-    left: 78%;
-    width: 8%;
+    left: 81%;
+    width: 3%;
     height: 18%;
-    background-image: url('../contents/bola.webp');
+    animation: swingBola 2s infinite ease-in-out alternate;
+}
+
+.bola:hover {
+    animation: swingBola 1s infinite ease-in-out alternate; 
+}
+
+@keyframes swingBola{
+    0% {
+        transform: rotate(-9deg); /* Mulai dari ayunan ke kiri */
+        left: 80%;
+     }
+    50% {
+        transform: rotate(9deg); /* Ayunan ke kanan */
+        left: 79%;
+    }
+    100% {
+        transform: rotate(-9deg); /* Kembali ke ayunan ke kiri */
+        left: 80%;
+    }
 }
 
 .trotoar {
@@ -183,7 +212,7 @@ div {
     left: 13.5%;
     width: 3%;
     height: 10%;
-    background-image: url('../contents/asep.gif');
+    background-image: url('../contents/webpasap.webp');
 }
 
 .sepeda {
@@ -208,9 +237,9 @@ div {
 .flyingburger {
     position: absolute;
     top: 0%;
-    left: 85%;
-    width: 18%;
-    height: 45%;
+    left: 87%;
+    width: 13%;
+    height: 47%;
     background-image: url('../contents/burgerTerbang.webp');
 }
 
@@ -222,7 +251,7 @@ div {
     background-image: url("../contents/barangMasuk.webp");
 }
 
-.hover {
+.burgerHover {
     position: absolute;
     top: 38%;
     left: 50%;
@@ -231,60 +260,20 @@ div {
     height: 10%;
 }
 
-.intro {
-    background-color: rgba(25, 23, 24, 1);
-}
-
-.loader {
-    background-color: rgba(25, 23, 24, 1);
-}
-
-/* .centerClickText {
+.catHover {
     position: absolute;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 17%;
-    height: 8%;
-    align-items: center;
-    transition: color 0.3s ease, width 0.3s ease, height 0.3s ease, font-size 0.3s ease;
+    top: 71%;
+    left: 49.5%;
+    width: 6%;
+    height: 9%;
 }
 
-.centerClickText:hover {
-    color: #FFCC00;
-    width: 24%;
-    height: 20%;
-    font-size: 1.9em;
-} */
-
-.introAnimation {
-    font-size: 1.85em;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.loadingimage {
+.BycicleHover {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 64%;
-    height: 64%;
-    background-image: url('../contents/burgerloading.gif');
-}
-
-.loadingtext {
-    position: absolute;
-    top: 125%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 1.4em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 82.5%;
+    left: 0%;
+    width: 18%;
+    height: 35%;
+    transform: translateY(-50%) translateX(100vw);
+    animation: speedMovement 10s infinite ease-in-out; 
 }

@@ -1,3 +1,11 @@
+const catMeow = new Audio("assets/sounds/cat.mp3");
+catMeow.loop = false;
+
+function catPlaySound() {
+    catMeow.currentTime = 0;
+    catMeow.play();
+}
+
 let running = false;
 
 async function UFOEvent() {
@@ -5,30 +13,35 @@ async function UFOEvent() {
         return;
     }
 
+    const clickanimation = document.getElementById("clickanimation");
+
+    clickanimation.style.display = "none";
+
     const koin = document.getElementById("coin");
     const ufoevent = document.getElementById("ufo");
 
     const src = ufoevent.src;
 
     // Temporarily remove the src attribute and then reset it
-    ufoevent.src = '';
-    ufoevent.src = src;
     koin.style.display = "none";
     ufoevent.style.display = "block";
+    ufoevent.src = "";
+    ufoevent.src = src;
     running = true;
 
     await wait(9000);
 
     koin.style.display = "block";
     ufoevent.style.display = "none";
+    clickanimation.style.display = "block";
     running = false;
 
     function wait(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise((resolve) => setTimeout(resolve, ms));
     }
 }
 
-const audio = new Audio('../assets/contents/layer 10/ringingphone.mp3');
+const audio = new Audio("assets/contents/layer 10/ringingphone.mp3");
 const staticphone = document.getElementById("wallphone");
 const staticphonecell = document.getElementById("wallphonecell");
 const ringingphone = document.getElementById("ringingwallphone");
@@ -59,6 +72,7 @@ async function playRingingPhone() {
 
 function stopRingingPhone() {
     audio.pause();
+    audio.currentTime = 0;
     staticphone.style.display = "block";
     staticphonecell.style.display = "block";
     ringingphone.style.display = "none";
@@ -101,7 +115,9 @@ function animateHamburgLightOff() {
             clearInterval(move);
         } else {
             alphaBrightness -= 0.1;
-            elem.style.opacity = (Math.round(alphaBrightness * 10) / 10).toString();
+            elem.style.opacity = (
+                Math.round(alphaBrightness * 10) / 10
+            ).toString();
         }
     }
 }
@@ -176,7 +192,9 @@ function animateJukeBoxOff() {
             clearInterval(move);
         } else {
             alphaBrightness -= 0.1;
-            elem.style.opacity = (Math.round(alphaBrightness * 10) / 10).toString();
+            elem.style.opacity = (
+                Math.round(alphaBrightness * 10) / 10
+            ).toString();
         }
     }
 }
@@ -219,7 +237,6 @@ function animateBearishBeruangLightOff() {
     }
 }
 
-
 function animateBullishRusaLightOn() {
     let move = null;
     let alpha = 0.0;
@@ -258,3 +275,35 @@ function animateBearishBeruangLightOff() {
     }
 }
 
+document.addEventListener("mousemove", function (e) {
+    const leafA = document.getElementById("leaf-A");
+    const leafB = document.getElementById("leaf-B");
+    const leafC = document.getElementById("leaf-C");
+    const leaf = document.getElementById("leaf");
+    const leafD = document.getElementById("leaf-D");
+    const main = document.getElementById("main");
+
+    const speedLeafA = 0.015;
+    const speedLeafB = 0.005;
+    const speedLeafC = 0.01;
+    const speedLeaf = 0.005;
+    const speedLeafD = 0.01;
+    const speedMain = 0.01;
+
+    const windowWidth = window.innerWidth;
+    const mouseX = e.clientX;
+
+    const offsetLeafA = (mouseX - windowWidth / 2) * speedLeafA;
+    const offsetLeafB = (mouseX - windowWidth / 2) * speedLeafB;
+    const offsetLeafC = (mouseX - windowWidth / 2) * speedLeafC;
+    const offsetLeaf = (mouseX - windowWidth / 2) * speedLeaf;
+    const offsetLeafD = (mouseX - windowWidth / 2) * speedLeafD;
+    const offsetMain = (mouseX - windowWidth / 2) * speedMain;
+
+    leafA.style.transform = `translateX(${offsetLeafA}px)`;
+    leafB.style.transform = `translateX(${offsetLeafB}px)`;
+    leafC.style.transform = `translateX(${offsetLeafC}px)`;
+    leaf.style.transform = `translateX(${offsetLeaf}px)`;
+    leafD.style.transform = `translateX(${offsetLeafD}px)`;
+    main.style.transform = `translateX(-${offsetMain}px)`;
+});

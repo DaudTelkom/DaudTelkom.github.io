@@ -10,7 +10,7 @@ body{
     background-image: url('../contents/layer8/bg.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 100%;
+    width: 101%;
     height: 100%;
 }
 
@@ -25,7 +25,6 @@ body{
     width: 100%;
     height: 100%;
 }
-
 
 .table{
     overflow: hidden;
@@ -48,7 +47,6 @@ body{
     width: 100%;
     height: 100%;
 }
-
 
 .bullish{
     position: fixed;
@@ -89,6 +87,7 @@ body{
     width: 100%;
     height: 100%;
 }
+
 .tag-order{
     position: fixed;
     /* background-image: url('../contents/layer7/order\ here.png');
@@ -96,11 +95,15 @@ body{
     /* background-size: 6% 7%; */
     /* transform: translate(50%, 31%); */
     left: 41.5%;
-    top: 30.8%;
+    top: 30.2%;
     width: 6%;
     height: 7%;
     transform-origin: top center;
     animation: swing 4s infinite ease-in-out alternate;
+}
+
+.tag-order:hover {
+    animation: swing 1s infinite ease-in-out alternate; 
 }
 
 .nogwai{
@@ -196,6 +199,16 @@ body{
     left: 89%;
     width: 10%;
     height: 28%;
+}
+
+.trigger8{
+    position: fixed;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transform: translate(-50%, -60%);
+    top: 72%;
+    left: 48%;
+    width: 8%;
+    height: 8%;
 }
 
 .bar-chair{
@@ -354,6 +367,20 @@ body{
 
 .lamp:hover {
  animation: swingLampu 1s infinite ease-in-out alternate; 
+}
+
+.clickanimation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    top: 75%;
+    left: 34.5%;
+    width: 3%;
+    height: 5%;
+    background-image: url('../../../all-assets/clickanimation.webp');
 }
 
 .wanted{
